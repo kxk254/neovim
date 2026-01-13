@@ -6,6 +6,12 @@ require("lazy").setup({
 
 })
 
+vim.api.nvim_create_autocmd("VimEnter",{
+	callback = function()
+		require("nvim-tree.api").tree.open()
+	end,
+})
+
 -- Load core config
 require("options")
 require("keymaps")
