@@ -1,5 +1,6 @@
 # neovim
 
+:Lazy sync
 
 :NvimTreeToggle
 
