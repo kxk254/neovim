@@ -1,0 +1,5 @@
+# Lazy.nvim plugin folder
+lazy/
+# Swap/backup files
+*.swp
+*.swo
