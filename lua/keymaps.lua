@@ -33,3 +33,15 @@ vim.keymap.set('n', '<leader>fF', function()
     hidden = true,        -- also include dotfiles (.env, .github, etc.)
   })
 end, { desc = "Find ALL files (no .gitignore)" })
+
+vim.keymap.set('n', '<leader>tn', ':tabnew<CR>', { desc = "New tab" })
+vim.keymap.set('n', '<leader>tc', ':tabclose<CR>', { desc = "Close tab" })
+vim.keymap.set('n', '<leader>tl', ':tabnext<CR>', { desc = "Next tab" })
+vim.keymap.set('n', '<leader>th', ':tabprev<CR>', { desc = "Previous tab" })
+
+
+-- Toggle NvimTree (open if closed, close if open)
+vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { desc = "Toggle NvimTree" })
+
+-- Close NvimTree
+vim.keymap.set("n", "<leader>q", ":NvimTreeClose<CR>", { desc = "Close NvimTree" })
