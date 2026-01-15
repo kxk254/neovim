@@ -16,3 +16,9 @@ vim.keymap.set("n", "<leader>gD", ":Gvdiffsplit<CR>", { desc = "Git diff split" 
 vim.keymap.set("n", "<leader>gb", ":Git branch<CR>", { desc = "Git branches" })
 vim.keymap.set("n", "<leader>gco", ":Git checkout ", { desc = "Git checkout" })
 
+local builtin = require('telescope.builtin')
+
+vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
+vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
+vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
+vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
