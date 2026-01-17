@@ -45,3 +45,7 @@ vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { desc = "Toggle NvimTre
 
 -- Close NvimTree
 vim.keymap.set("n", "<leader>q", ":NvimTreeClose<CR>", { desc = "Close NvimTree" })
+
+-- jj as Esc in Insert mode
+vim.keymap.set("i", "jj", "<Esc>", { noremap = true, silent=true })
+vim.keymap.set("v", "jj", "<Esc>", { noremap = true, silent=true })
