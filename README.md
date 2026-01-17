@@ -10,3 +10,13 @@ conform.nvim	On BufReadPre / BufNewFile (opens a file) -> triggers when you save
 nvim-cmp	Automatically when you start typing in insert mode
 mason.nvim / lspconfig	When you open a supported file type
 telescope.nvim	When you call a Telescope command (:Telescope find_files)
+
+sudo add-apt-repository ppa:neovim-ppa/stable
+sudo apt update
+sudo apt install neovim
+
+
+install lazyvim
+
+git clone https://github.com/folke/lazy.nvim ~/.local/share/nvim/site/pack/packer/start/lazy.nvim
+
