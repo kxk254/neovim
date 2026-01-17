@@ -16,7 +16,8 @@ sudo apt update
 sudo apt install neovim
 
 
-install lazyvim
+### install lazyvim
 
 git clone https://github.com/folke/lazy.nvim ~/.local/share/nvim/site/pack/packer/start/lazy.nvim
+
 

@@ -11,6 +11,34 @@ return {
     -- TypeScript / JavaScript
     vim.lsp.config("ts_ls", {
       on_attach = on_attach,
+      -- init_options = { ... } if needed
+      settings = {
+	      typescript = {
+		      inlayHints = {
+			      includeInlayParameterNameHints = "all",
+			      includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+			      includeInlayFunctionParameterTypeHints = true,
+			      includeInlayVariableTypeHints = true,
+			      includeInlayVariableTypeHintsWhenTypeMatchesName = false,
+			      includeInlayPropertyDeclarationTypeHints = true,
+			      includeInlayFunctionLikeReturnTypeHints = true,
+			      includeInlayEnumMemberValueHints = true,
+		      },
+	      },
+	      javascript = {
+		      inlayHints = {
+			     includeInlayParameterNameHints = "all",
+			      includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+			      includeInlayFunctionParameterTypeHints = true,
+			      includeInlayVariableTypeHints = true,
+			      includeInlayVariableTypeHintsWhenTypeMatchesName = false,
+			      includeInlayPropertyDeclarationTypeHints = true,
+			      includeInlayFunctionLikeReturnTypeHints = true,
+			      includeInlayEnumMemberValueHints = true,
+
+		      },
+	      },
+      },
     })
 
     -- Python

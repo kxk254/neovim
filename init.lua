@@ -1,6 +1,9 @@
-
 -- Set leader key to space
 vim.g.mapleader = " "   -- global leader
+
+-- Set the correct packpath for plugins
+vim.opt.packpath = vim.fn.stdpath('data') .. "/site"
+
 
 -- vim.opt.rtp:prepend("~/.local/share/nvim/lazy/lazy.nvim")
 vim.opt.rtp:prepend(vim.fn.stdpath("data") .. "/lazy/lazy.nvim")
@@ -37,3 +40,4 @@ require("keymaps")
 
 -- Optional but very convenient: make normal yanks go to system clipboard
 vim.opt.clipboard = 'unnamedplus'
+
