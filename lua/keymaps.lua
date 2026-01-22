@@ -49,3 +49,13 @@ vim.keymap.set("n", "<leader>q", ":NvimTreeClose<CR>", { desc = "Close NvimTree"
 -- jj as Esc in Insert mode
 vim.keymap.set("i", "jj", "<Esc>", { noremap = true, silent=true })
 vim.keymap.set("v", "jj", "<Esc>", { noremap = true, silent=true })
+
+
+-- Format buffer (or visual selection) with conform.nvim + Prettier priority
+vim.keymap.set({ "n", "v" }, "<leader>f", function()
+  require("conform").format({
+    async = true,           -- non-blocking
+    lsp_fallback = true,    -- if no Prettier → try LSP (tsserver etc.)
+    timeout_ms = 750,       -- prevent hanging on large files
+  })
+end, { desc = "Format buffer / selection (Prettier + fallback)" })
