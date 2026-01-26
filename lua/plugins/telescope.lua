@@ -15,6 +15,7 @@ return {
           "env/",
           "dist/",
           "build/",
+          "__pycache__/",
         },
       },
     })
