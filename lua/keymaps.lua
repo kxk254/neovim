@@ -6,7 +6,7 @@ end, { desc = "Toggle relative numbers" })
 -- Leader for Git shortcuts
 vim.keymap.set("n", "<leader>gs", ":Git<CR>", { desc = "Git status" })
 vim.keymap.set("n", "<leader>gc", ":Git commit<CR>", { desc = "Git commit" })
-vim.keymap.set("n", "<leader>ga", ":Git add %<CR>", { desc = "Git add current file" })
+vim.keymap.set("n", "<leader>ga", ":Git add -A<CR>", { desc = "Git add all changes" })
 vim.keymap.set("n", "<leader>gA", ":Git add .<CR>", { desc = "Git add all changes" })
 vim.keymap.set("n", "<leader>gp", ":Git push<CR>", { desc = "Git push" })
 vim.keymap.set("n", "<leader>gf", ":Git fetch<CR>", { desc = "Git fetch" })
