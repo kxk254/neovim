@@ -9,6 +9,7 @@ return {
 
     telescope.setup({
       defaults = {
+	      hidden = true,
         file_ignore_patterns = {
           "^%.git/",
           "node_modules/",
