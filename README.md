@@ -21,3 +21,7 @@ sudo apt install neovim
 git clone https://github.com/folke/lazy.nvim ~/.local/share/nvim/site/pack/packer/start/lazy.nvim
 
 
+   "nvim-neotest/nvim-nio",
+    "j-hui/fidget.nvim",
+
+
