@@ -59,3 +59,7 @@ vim.keymap.set({ "n", "v" }, "<leader>f", function()
     timeout_ms = 750,       -- prevent hanging on large files
   })
 end, { desc = "Format buffer / selection (Prettier + fallback)" })
+
+
+-- Rest run
+vim.keymap.set("n", "<leader>rr", "<cmd>Rest run<CR>", {  desc = "Rest run"})
