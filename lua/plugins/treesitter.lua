@@ -9,7 +9,7 @@ return {
     end
 
     ts_configs.setup({
-      ensure_installed = { "lua", "javascript", "typescript", "python" },
+      ensure_installed = { "lua", "javascript", "typescript", "python", "html", "css", "json", "bash", "markdown", "swift","tsx", "jsx","yaml", "dockerfile" },
       highlight = { enable = true },
       indent = { enable = true },
       autotag = { enable = true },
