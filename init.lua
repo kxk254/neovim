@@ -1,3 +1,5 @@
+vim.g.lazy_use_rocks = false
+
 -- Set leader key to space
 vim.g.mapleader = " "   -- global leader
 
@@ -7,11 +9,16 @@ vim.opt.packpath = vim.fn.stdpath('data') .. "/site"
 
 -- vim.opt.rtp:prepend("~/.local/share/nvim/lazy/lazy.nvim")
 vim.opt.rtp:prepend(vim.fn.stdpath("data") .. "/lazy/lazy.nvim")
-require("lazy").setup({
+require("lazy").setup(
+{
     -- Your plugins go here
 	{ import = "plugins" },
 
-})
+},
+{
+ 	rocks = { enabled = false },
+ }
+ )
 
 -- vim.api.nvim_create_autocmd("VimEnter",{
 -- 	callback = function()
