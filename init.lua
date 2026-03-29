@@ -1,50 +1,51 @@
-vim.g.lazy_use_rocks = false
+-- =============================================
+-- Clean init.lua for lazy.nvim + rest.nvim
+-- =============================================
+vim.g.lazy_use_rocks = false 
 
--- Set leader key to space
-vim.g.mapleader = " "   -- global leader
+-- Bootstrap lazy.nvim
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.uv.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable",
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
 
--- Set the correct packpath for plugins
-vim.opt.packpath = vim.fn.stdpath('data') .. "/site"
+vim.g.mapleader = " "
 
+-- Plugin setup (single call)
+require("lazy").setup({
+  -- rest.nvim plugin
+  {
+    "rest-nvim/rest.nvim",
+    dependencies = { 
+	    "nvim-lua/plenary.nvim",
+	    "j-hui/fidget.nvim",
+	    "nvim-neotest/nvim-nio",
+	    "nvim-treesitter/nvim-treesitter",
+    },
+    config = function()
+      require("rest-nvim").setup()
+    end
+  },
 
--- vim.opt.rtp:prepend("~/.local/share/nvim/lazy/lazy.nvim")
-vim.opt.rtp:prepend(vim.fn.stdpath("data") .. "/lazy/lazy.nvim")
-require("lazy").setup(
-{
-    -- Your plugins go here
-	{ import = "plugins" },
+  -- other plugins can go here, or import your plugins folder
+  { import = "plugins" }, 
+}, {
+  rocks = {
+    enabled = false,
+  },
+})
 
-},
-{
- 	rocks = { enabled = false },
- }
- )
-
--- vim.api.nvim_create_autocmd("VimEnter",{
--- 	callback = function()
--- 		require("nvim-tree.api").tree.open()
--- 	end,
--- })
-
--- Load core config
+-- Your options and keymaps
 require("options")
 require("keymaps")
 
-
--- Enable built-in OSC 52 support (Neovim ≥ 0.10)
--- If you're on older Neovim, this still usually works via the fallback:works
--- vim.g.clipboard = {
---   name = 'OSC 52',
---   copy = {
---     ['+'] = require('vim.ui.clipboard.osc52').copy('+'),
---     ['*'] = require('vim.ui.clipboard.osc52').copy('*'),
---   },
---   paste = {
---     ['+'] = require('vim.ui.clipboard.osc52').paste('+'),
---     ['*'] = require('vim.ui.clipboard.osc52').paste('*'),
---   },
--- }
-
--- Optional but very convenient: make normal yanks go to system clipboard
+-- Clipboard convenience
 vim.opt.clipboard = 'unnamedplus'
-
